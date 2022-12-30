@@ -146,7 +146,7 @@ export async function createTar(
     '--exclude',
     cacheFileName.replace(new RegExp(`\\${path.sep}`, 'g'), '/'),
     '-P',
-    '-L',
+    '--dereference',
     '-C',
     workingDirectory.replace(new RegExp(`\\${path.sep}`, 'g'), '/'),
     '--files-from',
