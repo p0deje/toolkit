@@ -14,6 +14,9 @@ const gzipExemptFileExtensions = [
   '.tar.lz',
   '.tar.gz',
   '.tar.bz2',
+  '.tar.zst',
+  '.tar.zstd',
+  '.tzst',
   '.7z'
 ]
 
@@ -47,7 +50,7 @@ export async function createGZipFileOnDisk(
     outputStream.on('error', error => {
       // eslint-disable-next-line no-console
       console.log(error)
-      reject
+      reject(error)
     })
   })
 }
